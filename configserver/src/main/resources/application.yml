@@ -3,10 +3,22 @@ spring:
     name: configserver
   profiles:
     active: native
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest
   cloud:
     config:
       server:
         native:
-          search-locations: classpath:/config
+          search-locations: file:///C:\Users\SEC.EDUCACAO\Documents\ecom-application\configserver\src\main\resources\config
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+
 server:
     port: 8888
